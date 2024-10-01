@@ -1,0 +1,288 @@
+public class OOPs {
+    //name of class -> capital letter se start
+    //name of function -> small letter se start
+
+    // code sabse phele yeh dekhta hai ki -> main function kha hai program mai
+    public static void main(stirng args[]){
+        // yah pr actual OBJECT of class ko baneyenga
+        pen p1 = new pen() // class_name pen_name = new_keyword class();
+        p1.setcolor("blue");                                        // --> class(); is also called constructor
+        system.out.println(p1.color);                               // -->newkeyword create space in memory 
+        p1.setTip("5");                                        
+        system.out.println(p1.tip);
+
+        //p1.setcolor("yellow");
+        p1.color = "yellow";
+        system.out.println("p1.color")
+
+        BankAccount myAcc = new BankAccount();
+        myAcc.username="Vidhan_Agrawal"
+        myAcc.password= "asdfasdfasf"//not work(possible) bcoz it is in private class
+        myAcc.setPassword("fkfkfkfkffk")
+
+        
+    }
+}
+
+
+class BankAccount {
+    public Stirng username;
+    private Stirng password;
+    public void setPassword (String pwd) {
+        password = pwd;
+}
+
+
+class pen {
+    // prop + fun -->define krte hai
+    
+    // properties
+    Stirng color;
+    int tip; 
+
+    // function
+    void setColor(String newColor) {
+        color = newColor;
+    }
+    void setTip(Stirng newTip){
+        tip = newTip;
+    }
+
+}
+
+class Student{
+    String name;
+    int age;
+    float percentage;
+
+    void calcPercentage(int phy,int chem,int math) {
+        percentage = (phy + chem + math) / 3;
+    }
+}
+
+
+
+
+
+
+
+// GETTERs and SETTERs
+
+class Pen {
+    private String color;  // private krne ke baad inhe direct .lga kr print nhi kr pate -->use .get 
+    private int tip;// this tip is property inside pen
+
+    String getColor()  {
+        return this.color;  // this _special_keyword --> current object ,jo bhi object is func ko call kr rha hai uski prpoerty ki baat ho rhi ahi
+    }
+
+    void setColor (String newColor) { //setter aapan ne already bna rkhe the
+    this. color = newColor;
+    }
+
+    void setTip(int tip){
+        this tip = tip;
+    }
+}
+
+
+
+// ENCAPSULATION
+//--> Encapsulation is defined as the wrapping up of data & methods under a single unit. It also implements data hiding.
+
+public class 00PS {
+
+    public static void main (String argsil) {
+        Student s1 = new Student(); // object calling Non-parameterized constructor
+        Student s2 = new Student ("shradha"); // object calling parameterized constructor
+        Student s3 = new Student (123); //object calling parameterized constructor
+        //Student s4 = new Student ("aman", 567) ; //--> object call hi nhi hoga bocz (sting, int) wala constructor hai hi nhi
+        
+        // constructor overloading --> aapne hisb se Non-parameterized, Parameterized lena is ,above it teh example
+        // constructor overloading --> exapmle of ploymorphism
+    }
+}
+
+class Student {
+    String name; 
+    int roll;
+
+
+    Student () { // Non-parameterized constructor
+        System.out.println("constructor is called...");
+    }
+    Student (String name) { //Parameterized constructor
+        this.name = name;
+    }
+    Student (int roll) { //Parameterized constructor
+        this.roll = roll;
+    }
+}
+
+
+
+// Inheritance--> Inheritance is when properties & methods of base class are passed on to a derived class.
+
+public static void main(String args[]) {
+    Fish shark = new Fish()
+        shark.eat();
+
+    
+}
+
+//Base class
+class Animal {
+    String color;
+
+    void eat()
+        system.out.println("eats hu huu")
+
+    void breathe()
+        system.out.println("breath oxygen")
+    }
+}
+
+// deriverd or sub class
+
+class Fish extends Animal { //extend_keyword ka game hai pura
+    int fins;
+
+
+////////// MULTI LEVEL INHERITANCE///////////
+
+public static void main(String args[]) {
+
+    Dogs pillu = new Dogs()
+    pillu.eat()
+    pillu.legs = 4;
+    system.out.println(pillu.legs);
+    
+
+    
+}
+
+//Base class
+class Animal {
+    String color;
+
+    void eat()
+        system.out.println("eats hu huu")
+
+    void breathe()
+        system.out.println("breath oxygen")
+    }
+}
+
+class Mammal extends Animal {
+    int legs;
+}
+
+class Dogs extends Mammal {
+    String breed;
+}
+
+
+//////HIERARCHICAL INHERITANCE//////
+
+class Animal {
+    String color;
+
+    void eat()
+        system.out.println("eats hu huu")
+
+    void breathe()
+        system.out.println("breath oxygen")
+    }
+}
+
+class Mammal extends Animal {
+    void walk;
+        system.out.println("walksss")
+}
+
+class Birds extends Animal {
+    void fly;
+        system.out.println("fliewwww")
+}
+
+
+class Fish extends Animal {
+    void swim;
+        system.out.println("chapak chapak")
+}
+
+//////Polymorphism/////
+
+// Compile Time Polymorphism
+// • Method Overloading
+
+//  Run Time Polymorphism
+// • Method Overriding
+
+
+// Method Overloading--> Multiple functions with the same name but different parameters
+
+public class 00PS {
+
+    public static void main (String argsil) {
+
+        Calculator calc = new Calculator();
+        System.out.println (calc-sum (1, 2));
+        System.out.println (calc. sum ((float)1.5, (float)2.5);// float likh kr typecastiong kr dii wrna, decimal ko java double samjata hai
+        System.out.println (calc.sum/(1, 2, 2):)
+
+    }
+}
+
+class Calculator {
+    int sum(int a,int b) {
+        return a + b;
+    }
+
+    float sum(float a, float b) {
+        return a + b;
+    }
+
+    int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+
+// Method Overriding --> Parent and child classes both contain the same function with a different definition.
+
+
+
+class Animal {
+    void eat () { // same function -- eat()
+        System.out-println("eats anything");
+    }
+}
+
+class Deer extends Animal{
+    void eat() { // same function --eat()
+        System. out-println("eats grass"); 
+    }
+}
+
+public class OOPs {
+    public static void main(String argsil) {
+    Deer d = new Deer ();
+    d.eat(); // eats grass bcz ,deer call kra hai 
+
+    }
+}
+
+//////Packages in Java//// --> Package is a group of similar types of classes, interfaces and sub-packages.
+
+// 1. inbuilt
+// 2. user defined
+
+//// Abstraction (hindi-diamg ka khayal)///// --> Hiding all the unnecessary details and showing only the important parts to the user.
+/// Abstraction --> idea de deta hai pr implimentation nhi btatae
+ 
+///// Abstract Class
+//- Cannot create create an instance(object) of abstract class
+//- Can have abstract / non-abstract (function)methods
+//- Can have constructors
+
